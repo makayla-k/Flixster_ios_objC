@@ -22,6 +22,7 @@
 		E3B615EF28302829009DE2D8 /* Flixster_objCUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B615EE28302829009DE2D8 /* Flixster_objCUITestsLaunchTests.m */; };
 		E3B615FD28303DB8009DE2D8 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B615FC28303DB8009DE2D8 /* MoviesViewController.m */; };
 		E3B616002831CF00009DE2D8 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B615FF2831CF00009DE2D8 /* MovieCell.m */; };
+		E3B616032831E9E9009DE2D8 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B616022831E9E9009DE2D8 /* DetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		E3B615FC28303DB8009DE2D8 /* MoviesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 		E3B615FE2831CF00009DE2D8 /* MovieCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
 		E3B615FF2831CF00009DE2D8 /* MovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		E3B616012831E9E9009DE2D8 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		E3B616022831E9E9009DE2D8 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,8 @@
 				E3B615FC28303DB8009DE2D8 /* MoviesViewController.m */,
 				E3B615FE2831CF00009DE2D8 /* MovieCell.h */,
 				E3B615FF2831CF00009DE2D8 /* MovieCell.m */,
+				E3B616012831E9E9009DE2D8 /* DetailsViewController.h */,
+				E3B616022831E9E9009DE2D8 /* DetailsViewController.m */,
 			);
 			path = Flixster_objC;
 			sourceTree = "<group>";
@@ -428,6 +433,7 @@
 				E3B615C828302822009DE2D8 /* AppDelegate.m in Sources */,
 				E3B616002831CF00009DE2D8 /* MovieCell.m in Sources */,
 				E3B615FD28303DB8009DE2D8 /* MoviesViewController.m in Sources */,
+				E3B616032831E9E9009DE2D8 /* DetailsViewController.m in Sources */,
 				E3B615D928302829009DE2D8 /* main.m in Sources */,
 				E3B615CB28302822009DE2D8 /* SceneDelegate.m in Sources */,
 			);

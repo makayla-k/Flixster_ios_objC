@@ -20,9 +20,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="cUR-Ao-Fas">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="idd-rU-AdF">
+                                    <rect key="frame" x="0.0" y="775" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" translatesAutoresizingMaskIntoConstraints="NO" id="n8v-cH-Pde" customClass="MovieCell">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="215.5"/>
+                                        <rect key="frame" x="0.0" y="89" width="414" height="215"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n8v-cH-Pde" id="NNo-Kg-S2d">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="215.5"/>
@@ -84,12 +93,68 @@
                     </view>
                     <navigationItem key="navigationItem" id="L0S-Nk-JQU"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="idd-rU-AdF" id="u9V-0b-6fT"/>
+                        <outlet property="searchBar" destination="cUR-Ao-Fas" id="vMG-sX-dpX"/>
                         <outlet property="tableView" destination="O3x-BC-rbC" id="HKA-oB-Fdb"/>
+                        <segue destination="Py2-Ri-KIP" kind="presentation" id="Bly-xW-CV7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="44.927536231884062" y="64.955357142857139"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="dP2-7p-sZg">
+            <objects>
+                <viewController id="Py2-Ri-KIP" customClass="DetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jcn-cO-hDv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A45-y2-QAy">
+                                <rect key="frame" x="6" y="8" width="175" height="285"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="285" id="Q00-qs-cNE"/>
+                                    <constraint firstAttribute="width" constant="175" id="ZFe-CL-NI1"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctor Strange in The Multiverse of Madness" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="do2-hA-BV4">
+                                <rect key="frame" x="6" y="301" width="375" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Ql7-fA-lBZ"/>
+                                    <constraint firstAttribute="width" constant="375" id="bxP-GP-rT8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.63423024099255476" green="0.41594184074925661" blue="0.76867932081222534" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq5-Zn-m9m">
+                                <rect key="frame" x="6" y="364" width="375" height="107.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="PhN-UO-j3H"/>
+                                </constraints>
+                                <string key="text">Doctor Strange, with the help of mystical allies both old and new, traverses the mind-bending and dangerous alternate realities of the Multiverse to confront a mysterious new adversary.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0Ma-eo-sDf"/>
+                        <color key="backgroundColor" red="0.088066730302633678" green="0.088066730302633678" blue="0.088066730302633678" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Pq5-Zn-m9m" firstAttribute="top" secondItem="do2-hA-BV4" secondAttribute="bottom" constant="8" id="Gez-Hj-51O"/>
+                            <constraint firstItem="do2-hA-BV4" firstAttribute="leading" secondItem="0Ma-eo-sDf" secondAttribute="leading" constant="6" id="Tzq-CZ-9Sk"/>
+                            <constraint firstItem="A45-y2-QAy" firstAttribute="leading" secondItem="0Ma-eo-sDf" secondAttribute="leading" constant="6" id="a3Q-wW-mem"/>
+                            <constraint firstItem="Pq5-Zn-m9m" firstAttribute="leading" secondItem="0Ma-eo-sDf" secondAttribute="leading" constant="6" id="d1Z-Us-0gZ"/>
+                            <constraint firstItem="A45-y2-QAy" firstAttribute="top" secondItem="0Ma-eo-sDf" secondAttribute="top" constant="8" id="eZM-up-L0f"/>
+                            <constraint firstItem="do2-hA-BV4" firstAttribute="top" secondItem="A45-y2-QAy" secondAttribute="bottom" constant="8" id="zE5-au-KOV"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EGB-TE-sno" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44.927536231884062" y="791.51785714285711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cil-cS-X5k">

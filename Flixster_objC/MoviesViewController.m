@@ -6,6 +6,8 @@
 //
 
 #import "MoviesViewController.h"
+#import "MovieCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -22,8 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     self.tableView.dataSource = self;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
     self.tableView.delegate = self;
         
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=3434be17b7e2f47a93a211477a193c7e"];
@@ -56,11 +59,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
     
     NSDictionary *movie = self.moviesArray[indexPath.row];
     
-    cell.textLabel.text = movie[@"title"];
+    cell.titleLabel.text = movie[@"title"];
+    cell.synopsisLabel.text = movie[@"overview"];
+    
+    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
+    NSString *fullPosterUrl = [baseURLString stringByAppendingString:movie[@"poster_path"]];
+    
+    NSURL *posterUrl = [NSURL URLWithString:fullPosterUrl];
+    
+    [cell.posterView setImageWithURL:posterUrl];
     
     return cell;
     

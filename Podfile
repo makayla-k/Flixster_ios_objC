@@ -4,9 +4,10 @@
 target 'Flixster_objC' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'AlamofireImage'
-
+  
   # Pods for Flixster_objC
+  
+  pod 'AFNetworking'
 
   target 'Flixster_objCTests' do
     inherit! :search_paths

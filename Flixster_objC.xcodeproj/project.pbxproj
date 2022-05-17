@@ -23,6 +23,8 @@
 		E3B615FD28303DB8009DE2D8 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B615FC28303DB8009DE2D8 /* MoviesViewController.m */; };
 		E3B616002831CF00009DE2D8 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B615FF2831CF00009DE2D8 /* MovieCell.m */; };
 		E3B616032831E9E9009DE2D8 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B616022831E9E9009DE2D8 /* DetailsViewController.m */; };
+		E3D009D3283365220038B5AC /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D009D2283365220038B5AC /* GridViewController.m */; };
+		E3D009D62833683E0038B5AC /* MovieGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D009D52833683E0038B5AC /* MovieGridCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,10 @@
 		E3B615FF2831CF00009DE2D8 /* MovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 		E3B616012831E9E9009DE2D8 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		E3B616022831E9E9009DE2D8 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		E3D009D1283365220038B5AC /* GridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridViewController.h; sourceTree = "<group>"; };
+		E3D009D2283365220038B5AC /* GridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridViewController.m; sourceTree = "<group>"; };
+		E3D009D42833683E0038B5AC /* MovieGridCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieGridCell.h; sourceTree = "<group>"; };
+		E3D009D52833683E0038B5AC /* MovieGridCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieGridCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,10 @@
 				E3B615FF2831CF00009DE2D8 /* MovieCell.m */,
 				E3B616012831E9E9009DE2D8 /* DetailsViewController.h */,
 				E3B616022831E9E9009DE2D8 /* DetailsViewController.m */,
+				E3D009D1283365220038B5AC /* GridViewController.h */,
+				E3D009D2283365220038B5AC /* GridViewController.m */,
+				E3D009D42833683E0038B5AC /* MovieGridCell.h */,
+				E3D009D52833683E0038B5AC /* MovieGridCell.m */,
 			);
 			path = Flixster_objC;
 			sourceTree = "<group>";
@@ -433,7 +443,9 @@
 				E3B615C828302822009DE2D8 /* AppDelegate.m in Sources */,
 				E3B616002831CF00009DE2D8 /* MovieCell.m in Sources */,
 				E3B615FD28303DB8009DE2D8 /* MoviesViewController.m in Sources */,
+				E3D009D3283365220038B5AC /* GridViewController.m in Sources */,
 				E3B616032831E9E9009DE2D8 /* DetailsViewController.m in Sources */,
+				E3D009D62833683E0038B5AC /* MovieGridCell.m in Sources */,
 				E3B615D928302829009DE2D8 /* main.m in Sources */,
 				E3B615CB28302822009DE2D8 /* SceneDelegate.m in Sources */,
 			);

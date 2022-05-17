@@ -1,56 +1,37 @@
 //
-//  MoviesViewController.m
+//  GridViewController.m
 //  Flixster_objC
 //
-//  Created by Makayla Rodriguez on 5/14/22.
+//  Created by Makayla Rodriguez on 5/16/22.
 //
 
-#import "MoviesViewController.h"
-#import "MovieCell.h"
+#import "GridViewController.h"
+#import "MovieGridCell.h"
 #import "UIImageView+AFNetworking.h"
 #import "DetailsViewController.h"
 
-@interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
+@interface GridViewController ()<UICollectionViewDataSource>
+@property (weak, nonatomic) IBOutlet UICollectionView *moviesCollectionView;
 @property (nonatomic, strong) NSArray *moviesArray;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) NSArray *filteredData;
 
 
-//- (NSIndexPath *)indexPathForCell:(UITableViewCell *)cell;
-
 @end
 
-@implementation MoviesViewController
+@implementation GridViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-            
-    [self.activityIndicator startAnimating];
-    
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self; // numberOfRowsInSection, cellForRowAt
-    self.searchBar.delegate = self;
-    
+    self.moviesCollectionView.dataSource = self;
     
     [self fetchMovies];
-    
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
-    [self.tableView insertSubview:self.refreshControl atIndex:0];
-//    [self.tableView addSubview:self.refreshControl];
-    
 }
 
 - (void)fetchMovies {
     
     self.filteredData = self.moviesArray;
-
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"Cannot Get Movies" message:@"The internet connection appears to be offline." preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *tryAgainAction = [UIAlertAction actionWithTitle:@"Try Again" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -81,29 +62,25 @@
                self.moviesArray = dataDictionary[@"results"];
                self.filteredData = dataDictionary[@"results"];
                
-               [self.tableView reloadData];
+               [self.moviesCollectionView reloadData];
                // TODO: Store the movies in a property to use elsewhere
                // TODO: Reload your table view data
            }
-        [self.refreshControl endRefreshing];
-        [self.activityIndicator stopAnimating];
        }];
     [task resume];
     
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.filteredData.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
-    MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
+    MovieGridCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieGridCell" forIndexPath:indexPath];
+
     
     NSDictionary *movie = self.filteredData[indexPath.row];
-    
-    cell.titleLabel.text = movie[@"title"];
-    cell.synopsisLabel.text = movie[@"overview"];
     
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *fullPosterUrl = [baseURLString stringByAppendingString:movie[@"poster_path"]];
@@ -111,45 +88,25 @@
     NSURL *posterUrl = [NSURL URLWithString:fullPosterUrl];
     
     [cell.posterView setImageWithURL:posterUrl];
-
+    
     return cell;
-    
 }
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    
-    if (searchText.length != 0) {
-        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
-            NSString *title = evaluatedObject[@"title"];
-            return [title containsString:searchText];
-        }];
-        self.filteredData = [self.moviesArray filteredArrayUsingPredicate:predicate];
-
-        NSLog(@"%@", self.filteredData);
-    } else {
-        self.filteredData = self.moviesArray;
-    }
-
-    [self.tableView reloadData];
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
+/*
 #pragma mark - Navigation
 
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+*/
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//     Get the new view controller using [segue destinationViewController].
-//     Pass the selected object to the new view controller.
-    UITableViewCell *cell = sender;
-    NSIndexPath *myIndexPath = [self.tableView indexPathForCell:cell];
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    UICollectionViewCell *cell = sender;
+    NSIndexPath *myIndexPath = [self.moviesCollectionView indexPathForCell:cell];
 
     NSDictionary *dataToPass = self.filteredData[myIndexPath.row];
     DetailsViewController *detailVC = [segue destinationViewController];
     detailVC.detailDict = dataToPass;
 }
-
 
 @end

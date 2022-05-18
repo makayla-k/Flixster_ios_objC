@@ -11,11 +11,11 @@
 #import "DetailsViewController.h"
 
 
-@interface GridViewController ()<UICollectionViewDataSource>
+@interface GridViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *moviesCollectionView;
 @property (nonatomic, strong) NSArray *moviesArray;
 @property (strong, nonatomic) NSArray *filteredData;
-
+@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
 
 @end
 
@@ -24,9 +24,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.moviesCollectionView.delegate = self;
     self.moviesCollectionView.dataSource = self;
     
     [self fetchMovies];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+
+    self.flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    self.flowLayout.minimumLineSpacing = 10;
+    self.flowLayout.minimumInteritemSpacing = 0;
+    self.flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
 - (void)fetchMovies {
@@ -75,6 +85,8 @@
     return self.filteredData.count;
 }
 
+
+
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     MovieGridCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieGridCell" forIndexPath:indexPath];
@@ -90,6 +102,14 @@
     [cell.posterView setImageWithURL:posterUrl];
     
     return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    int totalwidth = self.moviesCollectionView.bounds.size.width;
+    int numberOfCellsPerRow = 3;
+    int widthDimensions = (CGFloat)(totalwidth / numberOfCellsPerRow);
+    int heightDimensions = widthDimensions * 1.2;
+    return CGSizeMake(widthDimensions, heightDimensions);
 }
 
 /*

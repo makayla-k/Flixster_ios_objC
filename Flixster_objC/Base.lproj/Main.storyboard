@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="O3x-BC-rbC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="O3x-BC-rbC">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" id="cUR-Ao-Fas">
@@ -29,41 +28,32 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="idd-rU-AdF">
-                                    <rect key="frame" x="0.0" y="726" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="833" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" id="n8v-cH-Pde" customClass="MovieCell">
-                                        <rect key="frame" x="0.0" y="88.5" width="414" height="215.5"/>
+                                        <rect key="frame" x="0.0" y="89" width="414" height="323"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n8v-cH-Pde" id="NNo-Kg-S2d">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="215.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="323.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MxL-jg-ldV">
-                                                    <rect key="frame" x="26" y="19" width="125" height="200"/>
+                                                    <rect key="frame" x="8" y="8" width="125" height="200"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="D6o-KT-HGV"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="LBf-kd-gtz"/>
-                                                        <constraint firstAttribute="width" constant="125" id="VUS-y1-Cac"/>
-                                                        <constraint firstAttribute="height" constant="200" id="oz3-kR-ACg"/>
+                                                        <constraint firstAttribute="height" constant="200" id="D6o-KT-HGV"/>
+                                                        <constraint firstAttribute="width" constant="125" id="LBf-kd-gtz"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fantastic Beasts: The Secrets of Dumbledore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="242" translatesAutoresizingMaskIntoConstraints="NO" id="ZJL-Ft-bNm">
-                                                    <rect key="frame" x="159" y="19" width="243" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="241" id="cPx-TJ-ldw"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="141" y="8" width="261" height="24"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="textColor" red="0.94333755970001221" green="0.36624394090343904" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="242" translatesAutoresizingMaskIntoConstraints="NO" id="12L-gi-hzn">
-                                                    <rect key="frame" x="159" y="51.5" width="240" height="145"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="240" id="hKM-F5-vb5"/>
-                                                        <constraint firstAttribute="height" constant="145" id="rVK-0j-G1l"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="242" translatesAutoresizingMaskIntoConstraints="NO" id="12L-gi-hzn">
+                                                    <rect key="frame" x="141" y="40" width="265" height="264"/>
                                                     <string key="text">Professor Albus Dumbledore knows the powerful, dark wizard Gellert Grindelwald is moving to seize control of the wizarding world. Unable to stop him alone, he entrusts magizoologist Newt Scamander to lead an intrepid team of wizards and witches. They soon encounter an array of old and new beasts as they clash with Grindelwald's growing legion of followers.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,15 +61,17 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="MxL-jg-ldV" firstAttribute="leading" secondItem="NNo-Kg-S2d" secondAttribute="leadingMargin" constant="6" id="Cjg-Ml-MI1"/>
                                                 <constraint firstItem="ZJL-Ft-bNm" firstAttribute="trailing" secondItem="NNo-Kg-S2d" secondAttribute="trailingMargin" constant="8" id="Jhr-3V-Hgh"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MxL-jg-ldV" secondAttribute="bottom" constant="8" id="JwB-bF-rq2"/>
                                                 <constraint firstItem="12L-gi-hzn" firstAttribute="leading" secondItem="MxL-jg-ldV" secondAttribute="trailing" constant="8" id="KNz-I0-8vS"/>
-                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="12L-gi-hzn" secondAttribute="bottom" constant="8" id="Qke-OW-nWb"/>
-                                                <constraint firstItem="ZJL-Ft-bNm" firstAttribute="top" secondItem="NNo-Kg-S2d" secondAttribute="topMargin" constant="8" id="h1i-sb-j7t"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="12L-gi-hzn" secondAttribute="bottom" constant="8" id="i4n-HG-QPT"/>
-                                                <constraint firstItem="12L-gi-hzn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ZJL-Ft-bNm" secondAttribute="bottom" constant="8" id="r0l-wB-xpM"/>
+                                                <constraint firstItem="ZJL-Ft-bNm" firstAttribute="top" secondItem="MxL-jg-ldV" secondAttribute="top" id="MGE-oB-bb7"/>
+                                                <constraint firstItem="12L-gi-hzn" firstAttribute="leading" secondItem="ZJL-Ft-bNm" secondAttribute="leading" id="V6b-SA-PrL"/>
+                                                <constraint firstItem="MxL-jg-ldV" firstAttribute="leading" secondItem="NNo-Kg-S2d" secondAttribute="leading" constant="8" id="b2M-aU-eFw"/>
+                                                <constraint firstAttribute="trailing" secondItem="12L-gi-hzn" secondAttribute="trailing" constant="8" id="bTV-TZ-d1z"/>
+                                                <constraint firstItem="MxL-jg-ldV" firstAttribute="top" secondItem="NNo-Kg-S2d" secondAttribute="top" constant="8" id="cfP-0p-izG"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="12L-gi-hzn" secondAttribute="bottom" constant="8" id="i4n-HG-QPT"/>
+                                                <constraint firstItem="12L-gi-hzn" firstAttribute="top" secondItem="ZJL-Ft-bNm" secondAttribute="bottom" constant="8" id="r0l-wB-xpM"/>
                                                 <constraint firstItem="ZJL-Ft-bNm" firstAttribute="leading" secondItem="MxL-jg-ldV" secondAttribute="trailing" constant="8" id="vKi-Ab-tnm"/>
-                                                <constraint firstItem="MxL-jg-ldV" firstAttribute="top" secondItem="NNo-Kg-S2d" secondAttribute="topMargin" constant="8" id="wWJ-Pl-zn8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -95,6 +87,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="O3x-BC-rbC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4WI-GF-RWL"/>
+                            <constraint firstAttribute="bottom" secondItem="O3x-BC-rbC" secondAttribute="bottom" id="Pk7-Tz-YmW"/>
+                            <constraint firstItem="O3x-BC-rbC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Q2K-Uo-HPi"/>
+                            <constraint firstItem="O3x-BC-rbC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XeH-rr-Ieg"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Now Playing" id="uzU-rU-7AD"/>
                     <navigationItem key="navigationItem" title="Now Playing" id="L0S-Nk-JQU"/>
@@ -106,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45" y="545"/>
+            <point key="canvasLocation" x="44.927536231884062" y="544.41964285714278"/>
         </scene>
         <!--Movies-->
         <scene sceneID="5rl-ts-esn">
@@ -267,7 +265,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yLP-Hg-bFr"/>
+        <segue reference="7H1-9C-upE"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

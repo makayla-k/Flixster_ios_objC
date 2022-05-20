@@ -118,27 +118,29 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tyq-g4-SOb">
-                                    <size key="itemSize" width="200" height="500"/>
+                                    <size key="itemSize" width="160" height="220"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieGridCell" id="sI0-FS-UUP" customClass="MovieGridCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="220"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qpy-S9-zN9">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="500"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="220"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pub-qC-cp8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="1000"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pub-qC-cp8">
+                                                    <rect key="frame" x="-1.5" y="0.0" width="163" height="220"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="pub-qC-cp8" secondAttribute="height" multiplier="23:31" id="R5W-qR-SyS"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="pub-qC-cp8" secondAttribute="bottom" id="Add-HJ-rAU"/>
-                                                <constraint firstItem="pub-qC-cp8" firstAttribute="leading" secondItem="qpy-S9-zN9" secondAttribute="leading" constant="6" id="B1w-wO-ogS"/>
-                                                <constraint firstAttribute="trailing" secondItem="pub-qC-cp8" secondAttribute="trailing" constant="6" id="FOi-rz-BtD"/>
+                                                <constraint firstItem="pub-qC-cp8" firstAttribute="centerY" secondItem="qpy-S9-zN9" secondAttribute="centerY" id="k7I-pJ-ynZ"/>
+                                                <constraint firstItem="pub-qC-cp8" firstAttribute="centerX" secondItem="qpy-S9-zN9" secondAttribute="centerX" id="vHs-gD-YL9"/>
                                                 <constraint firstItem="pub-qC-cp8" firstAttribute="top" secondItem="qpy-S9-zN9" secondAttribute="top" id="wbC-Rs-qPG"/>
                                             </constraints>
                                         </collectionViewCellContentView>
@@ -273,7 +275,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7H1-9C-upE"/>
+        <segue reference="yLP-Hg-bFr"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *posterView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *backdropView;
 
 @end
 
@@ -30,6 +31,13 @@
     NSURL *posterUrl = [NSURL URLWithString:fullPosterUrl];
     
     [self.posterView setImageWithURL:posterUrl];
+    
+    NSString *baseBackdropURLString = @"https://image.tmdb.org/t/p/w500";
+    NSString *fullBackgroundUrl = [baseBackdropURLString stringByAppendingString:_detailDict[@"backdrop_path"]];
+    
+    NSURL *backdropUrl = [NSURL URLWithString:fullBackgroundUrl];
+    
+    [self.backdropView setImageWithURL:backdropUrl];
     
     NSLog(@"Detail screen");
 }

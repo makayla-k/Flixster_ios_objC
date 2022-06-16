@@ -38,6 +38,8 @@
     self.tableView.delegate = self; // numberOfRowsInSection, cellForRowAt
     self.searchBar.delegate = self;
     
+//    I just want to demonstrate how to push onto git hub
+    
     
     [self fetchMovies];
     
